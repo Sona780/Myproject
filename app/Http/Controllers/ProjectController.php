@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use DB;
+use App\Project;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -23,7 +24,16 @@ public function index()
 }
 public function storeproject(Request $request)
 {
+//  return $request->all();
+  $project=new project;
+  $project->project_title= $request->project_title;
+  $project->project_details= $request->project_details;
+  $project->project_cost= $request->project_cost;
+  $project->project_duration= $request->project_duration;
+  $project->save();
 
-  return $request->all();
+  $projects = DB::table('project')->get();
+  return view('project.viewprojects', compact('projects'));
+
 }
 }
