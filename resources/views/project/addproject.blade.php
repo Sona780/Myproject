@@ -3,8 +3,8 @@
 @section('content')
 <center>
     <h1><u>ADD NEW PROJECT</u></h1>
-    <form method="GET" action="{{URL::to('/')}}/newproject">
-      <input type="hidden" name="_method" value="PUT">
+    <form method="POST" action="{{URL::to('/')}}/newproject">
+      <input type="hidden" name="_method" value="POST">
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
        <div>

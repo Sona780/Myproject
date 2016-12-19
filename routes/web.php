@@ -20,4 +20,4 @@
 Route::get('/projects','ProjectController@home');
 Route::get('project/{project}','ProjectController@show');
 Route::get('createproject','ProjectController@index');
-Route::get('newproject','ProjectController@storeproject');
+Route::post('newproject','ProjectController@storeproject');
